@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using MySql.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
@@ -11,71 +12,76 @@ namespace EmployeeDataAccess.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterDatabase()
+                .Annotation("MySQL:Charset", "utf8mb4");
+
             migrationBuilder.CreateTable(
                 name: "Employee",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    EmployeeNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MiddleName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DOB = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DateJoined = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Designation = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NationalInsuranceNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    EmployeeNo = table.Column<string>(type: "longtext", nullable: false),
+                    FirstName = table.Column<string>(type: "longtext", nullable: false),
+                    MiddleName = table.Column<string>(type: "longtext", nullable: false),
+                    LastName = table.Column<string>(type: "longtext", nullable: false),
+                    Gender = table.Column<string>(type: "longtext", nullable: false),
+                    FullName = table.Column<string>(type: "longtext", nullable: false),
+                    ImageUrl = table.Column<string>(type: "longtext", nullable: true),
+                    DOB = table.Column<DateTime>(type: "datetime", nullable: false),
+                    DateJoined = table.Column<DateTime>(type: "datetime", nullable: false),
+                    Phone = table.Column<string>(type: "longtext", nullable: false),
+                    Designation = table.Column<string>(type: "longtext", nullable: false),
+                    Email = table.Column<string>(type: "longtext", nullable: false),
+                    NationalInsuranceNo = table.Column<string>(type: "longtext", nullable: false),
                     PaymentMethod = table.Column<int>(type: "int", nullable: false),
                     StudentLoan = table.Column<int>(type: "int", nullable: false),
                     UnionMember = table.Column<int>(type: "int", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Postcode = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Address = table.Column<string>(type: "longtext", nullable: false),
+                    City = table.Column<string>(type: "longtext", nullable: false),
+                    Postcode = table.Column<string>(type: "longtext", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Employee", x => x.ID);
-                });
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "TaxYear",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    YearOfTax = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    YearOfTax = table.Column<string>(type: "longtext", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TaxYear", x => x.Id);
-                });
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "PaymentRecord",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     EmployeeId = table.Column<int>(type: "int", nullable: false),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    NiNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FullName = table.Column<string>(type: "longtext", nullable: true),
+                    NiNo = table.Column<string>(type: "longtext", nullable: true),
                     TaxYearId = table.Column<int>(type: "int", nullable: false),
-                    HourlyRate = table.Column<decimal>(type: "money", nullable: false),
+                    HourlyRate = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     HourWorked = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ContractualEarnings = table.Column<decimal>(type: "money", nullable: false),
-                    OvertimeEarnings = table.Column<decimal>(type: "money", nullable: false),
-                    Tax = table.Column<decimal>(type: "money", nullable: false),
-                    NIC = table.Column<decimal>(type: "money", nullable: false),
-                    UnionFees = table.Column<decimal>(type: "money", nullable: true),
+                    ContractualEarnings = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    OvertimeEarnings = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Tax = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    NIC = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    UnionFees = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     SLC = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    TotalEarnings = table.Column<decimal>(type: "money", nullable: false),
-                    TotalDeduction = table.Column<decimal>(type: "money", nullable: false),
-                    Netpayment = table.Column<decimal>(type: "money", nullable: false)
+                    TotalEarnings = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    TotalDeduction = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Netpayment = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -92,7 +98,8 @@ namespace EmployeeDataAccess.Migrations
                         principalTable: "TaxYear",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PaymentRecord_EmployeeId",

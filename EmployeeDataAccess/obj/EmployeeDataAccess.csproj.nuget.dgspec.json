@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\EmployeeDCT1204\\EmployeeDataAccess\\EmployeeDataAccess.csproj": {}
+    "F:\\Employee\\QuanLyNhanVien\\EmployeeDataAccess\\EmployeeDataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\EmployeeDCT1204\\EmployeeDataAccess\\EmployeeDataAccess.csproj": {
+    "F:\\Employee\\QuanLyNhanVien\\EmployeeDataAccess\\EmployeeDataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\EmployeeDCT1204\\EmployeeDataAccess\\EmployeeDataAccess.csproj",
+        "projectUniqueName": "F:\\Employee\\QuanLyNhanVien\\EmployeeDataAccess\\EmployeeDataAccess.csproj",
         "projectName": "EmployeeDataAccess",
-        "projectPath": "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\EmployeeDCT1204\\EmployeeDataAccess\\EmployeeDataAccess.csproj",
+        "projectPath": "F:\\Employee\\QuanLyNhanVien\\EmployeeDataAccess\\EmployeeDataAccess.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\EmployeeDCT1204\\EmployeeDataAccess\\obj\\",
+        "outputPath": "F:\\Employee\\QuanLyNhanVien\\EmployeeDataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\EmployeeDCT1204\\EmployeeEntities\\EmployeeEntities.csproj": {
-                "projectPath": "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\EmployeeDCT1204\\EmployeeEntities\\EmployeeEntities.csproj"
+              "F:\\Employee\\QuanLyNhanVien\\EmployeeEntities\\EmployeeEntities.csproj": {
+                "projectPath": "F:\\Employee\\QuanLyNhanVien\\EmployeeEntities\\EmployeeEntities.csproj"
               }
             }
           }
@@ -63,6 +63,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.4, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -85,14 +89,14 @@
         }
       }
     },
-    "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\EmployeeDCT1204\\EmployeeEntities\\EmployeeEntities.csproj": {
+    "F:\\Employee\\QuanLyNhanVien\\EmployeeEntities\\EmployeeEntities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\EmployeeDCT1204\\EmployeeEntities\\EmployeeEntities.csproj",
+        "projectUniqueName": "F:\\Employee\\QuanLyNhanVien\\EmployeeEntities\\EmployeeEntities.csproj",
         "projectName": "EmployeeEntities",
-        "projectPath": "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\EmployeeDCT1204\\EmployeeEntities\\EmployeeEntities.csproj",
+        "projectPath": "F:\\Employee\\QuanLyNhanVien\\EmployeeEntities\\EmployeeEntities.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\EmployeeDCT1204\\EmployeeEntities\\obj\\",
+        "outputPath": "F:\\Employee\\QuanLyNhanVien\\EmployeeEntities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -136,6 +140,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.4, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.32.1, )"
             }
           },
           "imports": [
